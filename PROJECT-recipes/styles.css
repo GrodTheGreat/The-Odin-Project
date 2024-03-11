@@ -7,3 +7,21 @@ body {
 a {
   color: rgb(30, 30, 30);
 }
+
+/* Block and Inline Lesson style update */
+h1 {
+  margin-left: 20px;
+}
+
+li {
+  margin: 50px 0px;
+  padding: 100px 0px 50px 0px;
+  font-size: larger;
+  font-weight: bold;
+  border-top: 2px solid black;
+}
+
+a {
+  margin-left: 100px;
+  text-decoration: none;
+}
