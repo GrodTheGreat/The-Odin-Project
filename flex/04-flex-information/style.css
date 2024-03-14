@@ -24,3 +24,37 @@ img {
   justify-content: center;
   background: #eee;
 }
+
+/* Normally I wouldn't do this, it just makes it easier to check against the
+solution */
+body {
+  /* All items are centered on the page (horizontally, not vertically). */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* There is 32px between the title and the 'items.' */
+  gap: 32px;
+}
+
+div.items {
+  /* The items are arranged horizontally on the page. */
+  display: flex;
+  /* There is 52px between each item. */
+  gap: 52px;
+}
+
+div.item {
+  /* All items are centered on the page (horizontally, not vertically). */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* The items are only 200px wide and the text wraps. */
+  max-width: 200px;
+}
+
+div.text {
+  /* The item text is centered. */
+  text-align: center;
+  /* The items are only 200px wide and the text wraps. */
+  text-wrap: wrap;
+}
