@@ -3,6 +3,16 @@
   border: 4px solid midnightblue;
   width: 400px;
   height: 300px;
+
+  /* We need to make the container flex so we can use flex alignment and
+  justify */
+  display: flex;
+  /* Now that this is a flex container, we can have it so content is centered
+  vertically and horizontally. Since we only have one item to center the
+  following is fine, if there were more items then this may change but this is
+  totally fine for our needs. */
+  justify-content: center;
+  align-items: center; 
 }
 
 .box {
