@@ -25,3 +25,71 @@ input {
   width: 400px;
   margin-bottom: 16px;
 }
+
+/* Normally I wouldn't do this, it just makes it easier to check against the
+solution */
+/* You may want to search something like CSS remove list bullets. We've done
+this for you in previous examples, but not here. Yay learning. */
+li {
+  list-style-type: none;
+}
+
+/* Finding out how to style links in CSS might help you get rid of that pesky
+underline decoration... */
+a {
+  text-decoration: none;
+  color: #555;
+}
+
+/* We've added height: 100vh to the body... this makes the body exactly the
+same height as the viewport. To stick the footer to the bottom you will need to
+use flex and change the direction to column. */
+body {
+  /* The header is at the top of the page, the footer is at the bottom, and
+  they stay in place if you resize your screen. */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  /* The header and footer have padding. */
+  padding: 8px;
+
+  /* The links in the header and footer are pushed to either side. */
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer {
+  /* The header and footer have padding. */
+  padding: 8px;
+
+  /* The footer has a light gray background (#eeeeee). */
+  background-color: #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+ul.left-links, ul.right-links {
+  /* There is space between the links in the header and footer. */
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  padding: 12px;
+}
+
+div.content {
+  /* The logo, input and buttons are centered in the screen. */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* There is space between the logo, input and buttons. */
+  gap: 8px;
+}
+
+div.buttons button{
+  /* The buttons have an appropriate amount of padding. */
+  padding: 6px 16px;
+}
