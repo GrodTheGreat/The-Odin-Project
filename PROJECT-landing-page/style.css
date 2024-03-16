@@ -47,6 +47,16 @@ div.hero-main {
   color: #f9faf8;
 }
 
+.hero-image {
+  width: 400px;
+  height: 225px;
+  background-color: #626770;
+  color: #f9faf8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Main Section */
 .information {
   display: flex;
@@ -97,7 +107,7 @@ div.quote {
 }
 
 .quote-text > p {
-  font-size: 28 px;
+  font-size: 28px;
   font-style: italic;
   font-weight: lighter;
 }
