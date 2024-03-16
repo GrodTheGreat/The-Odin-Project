@@ -12,6 +12,10 @@ div.hero, div.footer {
 }
 
 /* Hero Section */
+div.hero {
+  padding: 0% 13% 10% 13%;
+}
+
 div.header {
   display: flex;
   justify-content: space-between;
@@ -28,6 +32,8 @@ div.header {
 
 div.hero-main {
   display: flex;
+  align-items: center;
+  gap: 32px;
 }
 
 .hero-main-title > h2 {
@@ -45,10 +51,18 @@ div.hero-main {
 .header-logo > p {
   font-size: 24px;
   color: #f9faf8;
+  font-weight: bold;
+}
+
+.hero-button button {
+  border: 1px solid #3882f6;
+}
+
+.hero-text, .hero-image {
+  width: 48%
 }
 
 .hero-image {
-  width: 400px;
   height: 225px;
   background-color: #626770;
   color: #f9faf8;
@@ -110,6 +124,10 @@ div.quote {
   font-size: 28px;
   font-style: italic;
   font-weight: lighter;
+}
+
+div.quoter {
+  align-self: flex-end;
 }
 
 .quoter > p {
