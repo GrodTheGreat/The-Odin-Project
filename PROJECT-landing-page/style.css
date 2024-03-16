@@ -4,6 +4,7 @@ body {
   font-family: "Roboto";
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 div.hero, div.footer {
@@ -47,6 +48,34 @@ div.hero-main {
 }
 
 /* Main Section */
+.information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.information-cards {
+  display: flex;
+  gap: 8px;
+}
+
+.information-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-image {
+  width: 150px;
+  height: 150px;
+  border: 3px solid  #3882f6;
+  border-radius: 10px;
+}
+
+.card-text > p {
+  text-align: center;
+}
+
 button, .call-to-action-container {
   background-color: #3882f6;
   color: #f9faf8;
