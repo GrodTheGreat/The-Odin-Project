@@ -1,4 +1,6 @@
 function getComputerChoice() {
+    // To get our computer's choice, randomly pick a number 0-2, and pull that
+    // index value from the list
     const choices = ['Rock', 'Paper', 'Scissors'];
     const randomChoice = Math.floor(Math.random() * 3);
     const choice = choices[randomChoice];
@@ -19,6 +21,7 @@ function playRound(playerSelection, computerSelection) {
     // Tie Message
     const tieMessage = `You Tied! ${playerSelectionProper} vs. ${computerSelection}`;
 
+    // Compare the player choice to the computer choice, and return the result
     if ((playerSelectionLower === 'rock') && (computerSelectionLower == 'paper')) {
         console.log(loseMessage); 
         return 'lose';
@@ -44,12 +47,17 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function playGame() {
+    // We need to keep track of how many wins the player and computer get
     let playerWins = 0;
     let computerWins = 0;
 
+    // A full game has 5 rounds, each round will need a new player and computer
+    // choice
     for (let i = 0; i < 5; i++) {
         let playerChoice = prompt('Rock, Paper, or Scissors?');
-        let result = playRound(playerChoice, getComputerChoice());
+        let computerChoice = getComputerChoice();
+
+        let result = playRound(playerChoice, computerChoice);
         if (result == 'win') {
             playerWins++;
         } else if (result == 'lose') {
@@ -57,6 +65,7 @@ function playGame() {
         } 
     }
 
+    // After teh game loop, compare player vs computer wins and decide a winner
     if (playerWins > computerWins) {
         console.log(`Congratulations! You won ${playerWins} times!`);
     } else if (computerWins > playerWins) {
@@ -65,8 +74,6 @@ function playGame() {
         console.log(`Not bad! You tied!`)
     }
 }
-  
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
+
+// Let's play the game!
 playGame();
-// console.log(playRound(playerSelection, computerSelection));
