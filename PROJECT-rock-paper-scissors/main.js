@@ -69,9 +69,9 @@ function playGame() {
     if (playerWins > computerWins) {
         console.log(`Congratulations! You won ${playerWins} times!`);
     } else if (computerWins > playerWins) {
-        console.log(`Bummer! You only won ${playerWins} times!`)
+        console.log(`Bummer! You only won ${playerWins} times!`);
     } else {
-        console.log(`Not bad! You tied!`)
+        console.log(`Not bad! You tied!`);
     }
 }
 
