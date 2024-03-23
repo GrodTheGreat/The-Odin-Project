@@ -38,9 +38,13 @@
       button.addEventListener('click', () => {
         value = input.value;
         input.value = '';
+        
         const li = document.createElement('li');
         const span = document.createElement('span');
         const deleteButton = document.createElement('button');
+
+        li.appendChild(span);
+        li.appendChild(deleteButton);
       })
     </script>
   </body>
