@@ -35,7 +35,7 @@
       const input = document.querySelector('input');
       const button = document.querySelector('button');
 
-      button.addEventListener('click', () => {
+      function addItem() {
         value = input.value;
         input.value = '';
         
@@ -57,6 +57,11 @@
 
         ul.appendChild(li);
         input.focus();
+      }
+
+      button.addEventListener('click', addItem)
+      input.addEventListener('keyup', (e) => {
+        if (e.key === 'Enter' || e.key === 13) addItem(e)
       })
     </script>
   </body>
