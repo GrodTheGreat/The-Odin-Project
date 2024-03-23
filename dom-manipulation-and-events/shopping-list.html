@@ -35,8 +35,16 @@
       const input = document.querySelector('input');
       const button = document.querySelector('button');
 
+      function deleteItem(event) {
+        const target = event.target;
+        const parent = target.parentElement;
+        parent.remove();
+      }
+
       function addItem() {
         value = input.value;
+        if (value === '') return;
+
         input.value = '';
         
         const li = document.createElement('li');
@@ -48,11 +56,7 @@
 
         span.textContent = value;
         deleteButton.textContent = 'Delete';
-        deleteButton.addEventListener('click', (event) => {
-          const target = event.target;
-          const parent = target.parentElement;
-          parent.remove();
-        });
+        deleteButton.addEventListener('click', e => deleteItem(e));
         deleteButton.setAttribute('class', 'test');
 
         ul.appendChild(li);
@@ -60,6 +64,7 @@
       }
 
       button.addEventListener('click', addItem)
+
       input.addEventListener('keyup', (e) => {
         if (e.key === 'Enter' || e.key === 13) addItem(e)
       })
