@@ -48,6 +48,12 @@
 
         span.textContent = value;
         deleteButton.textContent = 'Delete';
+        deleteButton.addEventListener('click', (event) => {
+          const target = event.target;
+          const parent = target.parentElement;
+          parent.remove();
+        });
+        deleteButton.setAttribute('class', 'test');
 
         ul.appendChild(li);
       })
