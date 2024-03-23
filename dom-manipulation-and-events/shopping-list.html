@@ -32,10 +32,12 @@
 
     <script>
       const ul = document.querySelector('ul');
-      const input = document.querySelector('label');
+      const input = document.querySelector('input');
       const button = document.querySelector('button');
 
-      button.addEventListener('click', () => {console.log('button clicked');})
+      button.addEventListener('click', () => {
+        value = input.value;
+      })
     </script>
   </body>
 </html>
