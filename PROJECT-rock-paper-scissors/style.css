@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  display: flex;
+}
+
+.game-over {
+  display: none;
+}
+
+.game, .game-over {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+button {
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  border: black solid 2px ;
+  color: whitesmoke;
+  background-color: skyblue;
+  font-weight: bold;
+  font-size: large;
+}
+
