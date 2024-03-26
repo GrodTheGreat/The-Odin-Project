@@ -10,3 +10,9 @@ function createGrid() {
 }
 
 createGrid();
+const container = document.querySelector('.container');
+container.addEventListener('mouseover', (event) => {
+    const target = event.target;
+    target.style.backgroundColor = 'lightgrey';
+    // console.log('hovering');
+})
