@@ -32,5 +32,8 @@ createGrid(gridSize);
 const container = document.querySelector('.container');
 container.addEventListener('mouseover', (event) => {
     const target = event.target;
-    target.style.backgroundColor = 'lightgrey';
+    if (!(target.classList.contains('hovered'))) {
+        target.classList.add('hovered');
+        target.style.backgroundColor = `rgb(${Math.round(Math.random() * 256)}, ${Math.round(Math.random() * 256)}, ${Math.round(Math.random() * 256)})`;
+    }
 })
