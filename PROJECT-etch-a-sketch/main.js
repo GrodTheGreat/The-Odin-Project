@@ -11,7 +11,6 @@ function setGridSize() {
     createGrid(gridSize)
 }
 
-
 function createGrid(gridSize = 16) {
     const container = document.querySelector('.container');
     container.innerHTML = '';
@@ -26,14 +25,21 @@ function createGrid(gridSize = 16) {
     }
 }
 
-let gridSize = 16;
+function updateColor(target) {
+    target.style.backgroundColor = `hsl(${target.colors.h}, 100%, ${target.colors.l}%)`;
+}
 
+let gridSize = 16;
 createGrid(gridSize);
 const container = document.querySelector('.container');
 container.addEventListener('mouseover', (event) => {
     const target = event.target;
     if (!(target.classList.contains('hovered'))) {
         target.classList.add('hovered');
-        target.style.backgroundColor = `rgb(${Math.round(Math.random() * 256)}, ${Math.round(Math.random() * 256)}, ${Math.round(Math.random() * 256)})`;
+        target.colors = {'h': Math.round(Math.random() * 359), 'l': 90};
+        updateColor(target);
+    } else if (target.colors.l >= 0) {
+        target.colors.l -= 10;
+        updateColor(target);
     }
 })
