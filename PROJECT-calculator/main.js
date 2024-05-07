@@ -1,13 +1,14 @@
 // TODO When user clicks number inputs add them to the screen
 function numInput(buttonID) {
     const userText = document.querySelector('#user-text');
-    if (buttonID === '.') {
-        console.log('Decimal clicked!');
+    if (buttonID === '.' && !(userText.textContent.includes('.'))) {
+        userText.textContent += buttonID;
+    } else if (buttonID === '.' && userText.textContent.includes('.')) {
+        // Do nothing
+        console.log('Do nothing');
     } else if (userText.textContent === '0') {
-        console.log('Zero found');
         userText.textContent = buttonID;
     } else {
-        console.log('No zero found');
         userText.textContent += buttonID;
     }
 }
