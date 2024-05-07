@@ -1,4 +1,3 @@
-// TODO When user clicks number inputs add them to the screen
 function numInput(buttonID) {
     const userText = document.querySelector('#user-text');
     if (buttonID === '.' && !(userText.textContent.includes('.'))) {
@@ -18,10 +17,28 @@ function clearDisplay() {
     userText.textContent = '0';
 }
 
+function changeSign() {
+    const userText = document.querySelector('#user-text');
+    if (userText.textContent != '0') {
+        userText.textContent = Number(userText.textContent) * -1;
+    }
+}
+
+function percent() {
+    const userText = document.querySelector('#user-text');
+    userText.textContent = Math.round(Number(userText.textContent)) / 100;
+}
+
 function functionInput(buttonID) {
     switch (buttonID) {
-        case'AC':
+        case 'AC':
             clearDisplay();
+            break;
+        case '+/-':
+            changeSign();
+            break;
+        case '%':
+            percent();
             break;
         default:
             break;
@@ -34,11 +51,9 @@ function clickListener(event) {
     classList = event.target.classList;
     switch (true) {
         case classList.contains('num-input'):
-            // TODO When user clicks number inputs add them to the screen
             numInput(event.target.id);
             break;
         case classList.contains('function'):
-            // TODO When user clicks a special key, handle appropriately
             functionInput(event.target.id);
             break;
         case classList.contains('operator'):
