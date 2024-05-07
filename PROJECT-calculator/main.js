@@ -1,6 +1,9 @@
 const userText = document.querySelector('#user-text');
 const inputs = document.querySelector('#inputs');
 
+let storedNum = null;
+let currentNum = null;
+
 inputs.addEventListener('click', clickListener);
 
 function numInput(buttonID) {
@@ -43,7 +46,59 @@ function functionInput(buttonID) {
     }
 }
 
-function operationInput(buttonID) {}
+function divide() {
+
+}
+
+function multiply() {
+
+}
+
+function subtract() {
+
+}
+
+function add() {
+    // if (!currentNum) {
+    //    currentNum = userText;
+    // }
+    // if (currentNum) {
+    //     storedNum = currentNum;
+    // }
+    if (storedNum) {
+        storedNum = storedNum + currentNum;
+    } else {
+        storedNum = currentNum
+    }
+    currentNum = null;
+}
+
+function evaluate() {
+    if (storedNum) {
+        userText = storedNum;
+    }
+}
+
+function operationInput(buttonID) {
+    currentNum = userText;
+    switch (buttonID) {
+        case '÷':
+            divide();
+            break;
+        case 'x':
+            multiply();
+            break;
+        case '-':
+            subtract();
+            break;
+        case '+':
+            add();
+            break;
+        case '=':
+            evaluate();
+            break;
+    }
+}
 
 function clickListener(event) {
     classList = event.target.classList;
