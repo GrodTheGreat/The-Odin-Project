@@ -1,32 +1,30 @@
+const userText = document.querySelector('#user-text');
+const inputs = document.querySelector('#inputs');
+
+inputs.addEventListener('click', clickListener);
+
 function numInput(buttonID) {
-    const userText = document.querySelector('#user-text');
-    if (buttonID === '.' && !(userText.textContent.includes('.'))) {
-        userText.textContent += buttonID;
-    } else if (buttonID === '.' && userText.textContent.includes('.')) {
-        // Do nothing
-        console.log('Do nothing');
-    } else if (userText.textContent === '0') {
-        userText.textContent = buttonID;
-    } else {
-        userText.textContent += buttonID;
+    if (buttonID === '.' && !(userText.innerText.includes('.'))) {
+        userText.innerText += buttonID;
+    } else if (buttonID !== '.' && userText.innerText === '0') {
+        userText.innerText = buttonID;
+    } else if (buttonID !== '.') {
+        userText.innerText += buttonID;
     }
 }
 
 function clearDisplay() {
-    const userText = document.querySelector('#user-text');
-    userText.textContent = '0';
+    userText.innerText = '0';
 }
 
 function changeSign() {
-    const userText = document.querySelector('#user-text');
-    if (userText.textContent != '0') {
-        userText.textContent = Number(userText.textContent) * -1;
+    if (userText.innerText != '0') {
+        userText.innerText = Number(userText.innerText) * -1;
     }
 }
 
 function percent() {
-    const userText = document.querySelector('#user-text');
-    userText.textContent = Math.round(Number(userText.textContent)) / 100;
+    userText.innerText = Math.round(Number(userText.innerText)) / 100;
 }
 
 function functionInput(buttonID) {
@@ -65,7 +63,3 @@ function clickListener(event) {
             break;
     }
 }
-
-const inputs = document.querySelector('#inputs');
-
-inputs.addEventListener('click', clickListener);
