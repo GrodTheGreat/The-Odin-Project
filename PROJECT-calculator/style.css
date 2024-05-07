@@ -89,6 +89,21 @@ button.operator {
   color: white;
 }
 
+button.num-input:active {
+  background-color: white;
+  color: dimgray;
+}
+
+button.function:active {
+  background-color: white;
+  color: lightgray
+}
+
+button.operator:active {
+  background-color: white;
+  color: orange;
+}
+
 div.zero {
   flex-grow: 2;
 }
