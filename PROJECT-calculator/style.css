@@ -99,10 +99,10 @@ button.function:active {
   color: lightgray
 }
 
-button.operator:active {
+/* button.operator:active {
   background-color: white;
   color: orange;
-}
+} */
 
 div.zero {
   flex-grow: 2;

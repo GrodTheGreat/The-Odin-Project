@@ -6,6 +6,13 @@ let currentNum = null;
 
 inputs.addEventListener('click', clickListener);
 
+const calculatorMemory = {
+    // 'displayNum': userText.innerText,
+    'result': null,
+    'currentNum': null,
+    'operation': null
+};
+
 function numInput(buttonID) {
     if (buttonID === '.' && !(userText.innerText.includes('.'))) {
         userText.innerText += buttonID;
@@ -18,6 +25,8 @@ function numInput(buttonID) {
 
 function clearDisplay() {
     userText.innerText = '0';
+    currentNum = null;
+    storedNum = null;
 }
 
 function changeSign() {
@@ -47,36 +56,60 @@ function functionInput(buttonID) {
 }
 
 function divide() {
+    calculatorMemory['operation'] = divide;
+    if (calculatorMemory['result']) {
+        calculatorMemory['result'] /= calculatorMemory['currentNum'];
+    } else {
 
+    }
 }
 
 function multiply() {
+    calculatorMemory['operation'] = multiply;
+    if (calculatorMemory['result']) {
+        calculatorMemory['result'] *= calculatorMemory['currentNum'];
+    } else {
 
+    }
 }
 
 function subtract() {
+    calculatorMemory['operation'] = subtract;
+    if (calculatorMemory['result']) {
+        calculatorMemory['result'] -= calculatorMemory['currentNum'];
+    } else {
 
+    }
 }
 
 function add() {
+    calculatorMemory['operation'] = add;
+    if (calculatorMemory['result']) {
+        calculatorMemory['result'] += calculatorMemory['currentNum'];
+    } else {
+        calculatorMemory['result'] = calculatorMemory['currentNum'];
+    }
     // if (!currentNum) {
     //    currentNum = userText;
     // }
     // if (currentNum) {
     //     storedNum = currentNum;
     // }
-    if (storedNum) {
-        storedNum = storedNum + currentNum;
-    } else {
-        storedNum = currentNum
-    }
-    currentNum = null;
+
+    // if (storedNum) {
+    //     storedNum += currentNum;
+    // } else {
+    //     storedNum = currentNum
+    // }
+    // currentNum = null;
+    // userText.innerText = storedNum;
 }
 
 function evaluate() {
     if (storedNum) {
-        userText = storedNum;
+        userText.innerText = storedNum;
     }
+    // calculatorMemory['operation']();
 }
 
 function operationInput(buttonID) {
@@ -110,6 +143,7 @@ function clickListener(event) {
             functionInput(event.target.id);
             break;
         case classList.contains('operator'):
+            calculatorMemory['currentNum'] = userText.innerText;
             // TODO When user clicks operator we need to handle new input and
             // prepare math operation
             operationInput(event.target.id);
