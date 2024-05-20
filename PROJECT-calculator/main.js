@@ -55,40 +55,47 @@ function functionInput(buttonID) {
     }
 }
 
-function divide() {
-    calculatorMemory['operation'] = divide;
-    if (calculatorMemory['result']) {
-        calculatorMemory['result'] /= calculatorMemory['currentNum'];
-    } else {
+function divide(num1 = 1, num2 = 1) {
+    // calculatorMemory['operation'] = divide;
+    // if (calculatorMemory['result']) {
+    //     calculatorMemory['result'] /= calculatorMemory['currentNum'];
+    // } else {
 
-    }
+    // }
+
+    if (num2 != 0) return num1 / num2;
+    else return null;
 }
 
-function multiply() {
-    calculatorMemory['operation'] = multiply;
-    if (calculatorMemory['result']) {
-        calculatorMemory['result'] *= calculatorMemory['currentNum'];
-    } else {
+function multiply(num1 = 1, num2 = 1) {
+    // calculatorMemory['operation'] = multiply;
+    // if (calculatorMemory['result']) {
+    //     calculatorMemory['result'] *= calculatorMemory['currentNum'];
+    // } else {
 
-    }
+    // }
+
+    return num1 * num2;
 }
 
-function subtract() {
-    calculatorMemory['operation'] = subtract;
-    if (calculatorMemory['result']) {
-        calculatorMemory['result'] -= calculatorMemory['currentNum'];
-    } else {
+function subtract(num1 = 0, num2 = 0) {
+    // calculatorMemory['operation'] = subtract;
+    // if (calculatorMemory['result']) {
+    //     calculatorMemory['result'] -= calculatorMemory['currentNum'];
+    // } else {
 
-    }
+    // }
+
+    return num1 - num2;
 }
 
-function add() {
-    calculatorMemory['operation'] = add;
-    if (calculatorMemory['result']) {
-        calculatorMemory['result'] += calculatorMemory['currentNum'];
-    } else {
-        calculatorMemory['result'] = calculatorMemory['currentNum'];
-    }
+function add(num1 = 0, num2 = 0) {
+    // calculatorMemory['operation'] = add;
+    // if (calculatorMemory['result']) {
+    //     calculatorMemory['result'] += calculatorMemory['currentNum'];
+    // } else {
+    //     calculatorMemory['result'] = calculatorMemory['currentNum'];
+    // }
     // if (!currentNum) {
     //    currentNum = userText;
     // }
@@ -103,6 +110,8 @@ function add() {
     // }
     // currentNum = null;
     // userText.innerText = storedNum;
+
+    return num1 + num2;
 }
 
 function evaluate() {
