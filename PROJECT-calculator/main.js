@@ -1,8 +1,10 @@
 const userText = document.querySelector('#user-text');
 const inputs = document.querySelector('#inputs');
 
-let storedNum = null;
-let currentNum = null;
+let storedNum = 0;
+let currentNum = 0;
+
+let operatorActive = false;
 
 inputs.addEventListener('click', clickListener);
 
