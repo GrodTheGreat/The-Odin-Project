@@ -35,5 +35,5 @@ caption {
 }
 
 col#nameCol {
-    background-color: yellow; /* for testing purposes */
+    border:2px solid black;
 }
