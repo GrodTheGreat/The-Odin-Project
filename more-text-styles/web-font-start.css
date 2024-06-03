@@ -1,0 +1,50 @@
+/* Font Definition */
+/* Local Fonts */
+@font-face {
+  font-family: 'robotoblack';
+  src: url('./fonts/roboto-black-webfont.woff2') format('woff2'),
+       url('./fonts/roboto-black-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'chunkfiveregular';
+  src: url('./fonts/chunkfive-regular-webfont.woff2') format('woff2'),
+       url('./fonts/chunkfive-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* General setup */
+
+html {
+  font-size: 10px;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+body {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Typography */
+
+h1 {
+  font-size: 3.2rem;
+  font-family: 'Jaro', sans-serif;
+}
+
+h2 {
+  font-size: 2.4rem;
+  font-family: 'chunkfiveregular', sans-serif;
+}
+
+p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  word-spacing: 0.6rem;
+  font-family: 'robotoblack', sans-serif;
+}
