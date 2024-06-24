@@ -8,6 +8,61 @@
   <script src="./main.js"></script>
 </head>
 <body>
-  
+  <div class="hero">
+    <img src="./images/form-image.jpg" alt="An image of fern leaves">
+    <div class="site-logo">
+      <img src="./images/odin-lined.png" alt="Odin logo">
+      <p>ODIN</p>
+    </div>
+    <div class="hero-source">
+      <p>Photo by 
+        <a href="https://unsplash.com/@haliewestphoto">Halie West</a>
+         on 
+        <a
+          href="https://unsplash.com/photos/green-leaf-plant-in-close-up-photography-25xggax4bSA">
+          Unsplash
+        </a>
+      </p>
+    </div>
+  </div>
+  <div class="call-to-action">
+    <h4>This is not a real online service! You know you need something like
+    this in your life to help you realize your deepest dreams. Sign up
+    <em>now</em> to get started.</h4>
+    <h4>You <em>know</em> you want to.</h4>
+  </div>
+  <div class="form">
+    <form action="post">
+      <div class="form-inputs">
+        <legend>Let's do this!</legend>
+        <div class="names">
+          <label for="first-name">FIRST NAME</label>
+          <input type="text" id="first-name" name="first-name">
+          <label for="last-name">LAST NAME</label>
+          <input type="text" id="last-name" name="last-name">
+        </div>
+        <div class="contact-info">
+          <label for="email">EMAIL</label>
+          <input type="email" id="email" name="email" required>
+          <label for="phone">PHONE NUMBER</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="passwords">
+          <label for="password">PASSWORD</label>
+          <input type="password" id="password" name="password" required>
+          <label for="password-confirm">CONFIRM PASSWORD</label>
+          <input 
+            type="password"
+            id="password-confirm"
+            name="password-confirm"
+            required>
+        </div>
+      </div>
+      <button type="submit">Create Account</button>
+      <div class="login">
+        <p>Already have an account? <a href=""><strong>Log in</strong></a></p>
+      </div>
+    </form>
+  </div>
 </body>
 </html>
