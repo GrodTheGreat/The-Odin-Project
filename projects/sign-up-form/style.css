@@ -39,9 +39,8 @@ select {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  width: 30vw;
+  width: clamp(350px, 30vw, 750px);
   height: 100%;
-  min-width: 300px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -144,9 +143,69 @@ button {
   background-color: #596D48;
   color: white;
   font-weight: bold;
+  box-shadow: 0 3px 5px darkgray;
 }
 
 #login-link {
   color: #596D48;
   text-decoration: none;
+}
+
+input {
+  font-size: 1.2em;
+  padding: 2px;
+}
+
+input:invalid {
+  border: 1px solid red;
+}
+
+input:focus {
+  border: 1px solid blue;
+  outline: 1px solid blue;
+}
+
+input+span {
+  color:red;
+  font-size: 0.7em;
+}
+
+input:invalid + span::before {
+  content: "✖";
+  color: red;
+}
+
+input:valid + span::before {
+  content: "✓";
+  color: green;
+}
+
+input#email:invalid + span::after {
+  content: " E-mail must be a valid email address";
+  color: red;
+}
+
+input#phone:invalid + span::before {
+  content: "✖";
+  color: red;
+}
+
+input#phone:invalid + span::after {
+  content: " Must be a valid phone number";
+  color: red;
+}
+
+input#password:invalid + span::after {
+  content: " *Password is required";
+  color: red;
+}
+
+input#password-confirm:invalid + span::after {
+  content: " *Passwords must match";
+  color: red;
+}
+
+input:optional + span::after {
+  content: " Optional";
+  color: green;
 }
