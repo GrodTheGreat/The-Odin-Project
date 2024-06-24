@@ -1,0 +1,152 @@
+/* Font Definition */
+/* Local Fonts */
+@font-face {
+  font-family: 'roboto';
+  src: url('./fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Norse-Bold';
+  src: url('./fonts/Norse-Bold.otf') format('opentype');
+}
+
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'roboto', sans-serif;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+  font-size: 100%;
+  padding: 0; margin: 0;
+}
+
+.hero {
+  background-image: url('./images/form-image.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 30vw;
+  height: 100%;
+  min-width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-logo {
+  background-color: rgba(0, 0, 0, 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25vh;
+  padding: 10px;
+}
+
+.site-logo img {
+  width: 100px;
+}
+
+.odin {
+  font-family: 'Norse-Bold', 'roboto', sans-serif;
+  font-size: 7em;
+  color: white;
+  margin: 0;
+}
+
+.hero-source {
+  margin-top: auto;
+}
+
+.hero-source, .hero-source a {
+  font-size: 0.7rem;
+  color: white;
+}
+
+.main {
+  background-color: #F9FAFB;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.call-to-action, .form-inputs, .submit {
+  max-width: 70ch;
+}
+.call-to-action {
+  background-color: #F9FAFB;
+  padding: 50px;
+  margin-top: 10vh;
+  font-size: 1.25em;
+}
+
+.form-inputs-wrapper {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 3px 5px darkgray;
+}
+
+.form-inputs {
+  background-color: white;
+  padding: 20px 50px;
+  margin: 10px 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit {
+  padding: 50px;
+  background-color: #F9FAFB;
+}
+
+legend {
+  font-size: 1.25em;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+label {
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: rgb(60, 60, 60);
+}
+
+button {
+  width: 200px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background-color: #596D48;
+  color: white;
+  font-weight: bold;
+}
+
+#login-link {
+  color: #596D48;
+  text-decoration: none;
+}
