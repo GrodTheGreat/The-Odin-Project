@@ -1,0 +1,193 @@
+/* Font Definition */
+/* Local Fonts */
+@font-face {
+  font-family: 'roboto';
+  src: url('./assets/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary: rgb(25, 146, 212);
+  --background: rgb(226, 232, 240);
+  --project: rgb(240, 180, 41);
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  width: 100vw;
+  height: 100vh;
+}
+
+.header {
+  background-color: white;
+  grid-row: 1;
+  grid-column: 2 / -1;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(9, 1fr);
+  padding: 0 50px;
+}
+
+.search {
+  grid-row: 1;
+  grid-column: 1 / 6;
+}
+
+.profile {
+  grid-row: 1;
+  grid-column: 6 / -1;
+}
+
+.profile-image {
+  border-radius: 50%;
+  height: 60px;
+}
+
+#welcome-profile {
+  height: 90px;
+}
+
+input[type="search"] {
+  width: 100%;
+  background-color: var(--background);
+  border: none;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  padding: 4px 10px;
+}
+
+.welcome {
+  grid-row: 2;
+  grid-column: 1 / 5;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.welcome > #welcome-profile {
+  grid-column: 1;
+  grid-row: 1 / -1;
+}
+
+.welcome > .hi {
+  grid-row: 1;
+  grid-column: 2 / -1;
+  font-weight: bold;
+}
+
+.welcome > .user {
+  grid-row: 2;
+  grid-column: 2 / -1;
+}
+
+.user * {
+  display: inline;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.task-controls {
+  grid-row: 2;
+  grid-column: 6 / -1;
+}
+
+.task-controls-button {
+  background-color: var(--primary);
+  color: white;
+  font-size: 1.1rem;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 20px;
+  width: 115px;
+}
+
+.sidebar {
+  background-color: var(--primary);
+  color: white;
+  grid-column: 1;
+  grid-row: 1 / -1;
+  display: grid;
+  gap: 40px;
+}
+
+.sidebar svg {
+  fill: white;
+}
+
+.logo svg {
+  height: 3.5rem;
+}
+
+svg {
+  height: 2rem;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: white;
+}
+
+.link, .logo {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.main {
+  background-color: var(--background);
+  grid-row: 2 / -1;
+  grid-column: 2 / -1;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  padding: 20px;
+  gap: 20px;
+}
+
+.project-section {
+  grid-column: 1 / 10;
+  grid-row: 1 / -1;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  gap: 20px;
+}
+
+.project {
+  grid-column: span 6;
+  grid-row: span 4;
+  background-color: white;
+  border-radius: 10px;
+  border-left: 8px solid var(--project);
+  padding: 20px
+}
+
+.main-side-section {
+  grid-column: 10 / -1;
+  grid-row: 1 / -1;
+}
+
+.announcements, .trending {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.trend > img {
+  border-radius: 50%;
+  height: 60px;
+}
