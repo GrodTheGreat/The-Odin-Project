@@ -46,3 +46,53 @@ html {
   color: white;
   text-align: left;
 }
+
+/* Shouldn't normally do this, but for this exercise I'm having my code down
+here */
+/* 
+Hints/Restrictions:
+You only need to add to the CSS selectors.
+Look back to the Creating a Grid lesson if you forget how to turn an element
+into a grid.
+Use fixed track sizes (e.g. pixels) for your columns and rows.
+*/
+.container {
+  display: grid;
+
+  /* The grid has two columns, The second column is three times larger than the
+  first */
+  grid-template-columns: 200px 600px;
+  /* The grid has four rows, The third row is five times larger than the
+  others */
+  grid-template-rows: 150px 150px 750px 150px;
+  gap: 15px; /* The gap is 15px */
+}
+
+.header {
+  /* The header and footer elements span across both columns */
+  grid-column: 1 / -1; 
+  grid-row: 1;
+}
+
+.sidebar {
+  grid-column: 1; /* The sidebar element only spans across the first column */
+  grid-row: 2 / -2;
+}
+
+.nav {
+  /* The nav and article elements span across the second column */
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.article {
+  /* The nav and article elements span across the second column */
+  grid-column: 2;
+  grid-row: 3 / -2;
+}
+
+.footer {
+  /* The header and footer elements span across both columns */
+  grid-column: 1/ -1;
+  grid-row: -1 / -2;
+}
