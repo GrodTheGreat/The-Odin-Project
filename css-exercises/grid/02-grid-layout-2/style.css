@@ -49,3 +49,23 @@ html {
   background-color: #393f4d;
   grid-column: 1 / 3;
 }
+
+/* Shouldn't normally do this, but for this exercise I'm having my code down
+here */
+/* 
+Hints/Restrictions:
+You only need to add to the CSS selectors.
+Use dynamic track sizes for your columns and rows.
+*/
+.container {
+  display: grid;
+  gap: 15px; /* The gap is 15px */
+  /* The grid has two columns, The second column is three times larger than the
+  other. */
+  grid-template-columns: 1fr 3fr;
+  /* The grid has four rows, The third row is five times larger than the
+  others. */
+  grid-template-rows: 1fr 1fr 5fr 1fr;
+  /* 
+The grid tracks do not use static sizes (no pixels!) */
+}
