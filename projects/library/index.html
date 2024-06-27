@@ -4,12 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <script src="./main.js"></script>
+  <script src="./main.js" defer></script>
   <title>Project: Library</title>
 </head>
 <body>
   <h1>Project: Library</h1>
   <hr>
-  
+  <div class="app">
+    <h2>Welcome to the Library!</h2>
+    <div class="book-list-container">
+      <h3>Books</h3>
+      <div class="book-list">
+        <ul>
+          <!-- Books will go here -->
+        </ul>
+      </div>
+    </div>
+
+    <div class="add-book-form">
+      <form action="." method="post" id="book-form">
+        <legend>Add a book</legend>
+        <ul>
+          <li>              
+            <label for="title">Book Title</label>
+            <input type="text" name="title" id="title">
+          </li>
+          <li>            
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author">
+          </li>
+          <li>            
+            <label for="pages">Number of pages</label>
+            <input type="text" name="pages" id="pages" inputmode="numeric" pattern="[0-9]*">
+          </li>
+          <li>            
+            <label for="has-read">Have you read this?</label>
+            <input type="checkbox" name="has-read" id="has-read">
+          </li>
+        </ul>
+
+        <button type="submit" onsubmit="addBookToLibrary">Add Book</button>
+      </form>
+    </div>
+
+  </div>
 </body>
 </html>
