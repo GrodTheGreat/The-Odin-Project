@@ -198,20 +198,44 @@ svg {
   grid-row: 1 / -1;
 }
 
+.project, .announcements, .trending {
+  box-shadow:  0 4px 3px #ccc;
+}
+
 .projects {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 20px;
 }
 
 .project {
-  grid-column: span 6;
-  grid-row: span 4;
   background-color: white;
   border-radius: 10px;
   border-left: 8px solid var(--project);
-  padding: 20px
+  padding: 20px;
+  max-width: 480px;
+}
+
+.project-title {
+  font-size: 1.1rem;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.project-description {
+  color: rgb(100, 100, 100);
+  margin-right: 40px;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project-options {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
 }
 
 .main-side-section {
@@ -223,9 +247,55 @@ svg {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
+  max-width: 320px;
+}
+
+.announcement-title {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+p.announcement-description {
+  font-size: 0.8rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: rgb(100, 100, 100);
+}
+
+.trending {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.trend {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 10px;
 }
 
 .trend > img {
   border-radius: 50%;
   height: 60px;
+}
+
+.trending-user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.trending-user > * {
+  margin: 0;
+}
+
+.tag {
+  font-weight: bolder;
+}
+
+.user-description {
+  color: rgb(100, 100, 100);
 }
