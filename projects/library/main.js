@@ -1,4 +1,26 @@
-const myLibrary = [];
+const myLibrary = [
+    {
+        id: 0,
+        title: 'Fahrenheit 451',
+        author: 'Bradbury, Ray',
+        pages: 249,
+        read: false
+    },
+    {
+        id: 1,
+        title: 'Dune',
+        author: 'Herbert, Frank',
+        pages: 720,
+        read: true
+    },
+    {
+        id: 2,
+        title: '1984',
+        author: 'Orwell, George',
+        pages: 205,
+        read: false
+    }
+];
 
 function Book(id, title, author, pages, read) {
     this.id = id;
@@ -39,8 +61,8 @@ function createBookEntry(book) {
     const div = document.createElement('div');
     const titleDiv = createDiv('book-title', book.title);
     const authorDiv = createDiv('book-author', book.author);
-    const pagesDiv = createDiv('book-author', book.pages);
-    const readDiv = createDiv('book-author', book.read);
+    const pagesDiv = createDiv('book-pages', book.pages);
+    const readDiv = createDiv('read-book', book.read);
     const deleteDiv = createBookDelete();
 
     div.appendChild(titleDiv);
@@ -73,13 +95,5 @@ addBookForm.addEventListener('submit', (e) => {
     addBookToLibrary();
     // displayBooks();
 })
-
-let book1 = new Book(0, "Fahrenheit 451", "Bradbury, Ray", 249, false);
-let book2 = new Book(1, "Dune", "Herbert, Frank", 720, true);
-let book3 = new Book(2, "1984", "Orwell, George", 205, false);
-
-myLibrary.push(book1);
-myLibrary.push(book2);
-myLibrary.push(book3);
 
 displayBooks();
