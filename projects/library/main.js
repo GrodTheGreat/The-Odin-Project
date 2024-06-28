@@ -49,6 +49,7 @@ function createBookDelete() {
 
     deleteButton.textContent = 'Delete';
     deleteButton.setAttribute('type', 'button');
+    deleteButton.setAttribute('class', 'delete');
 
     deleteDiv.appendChild(deleteButton);
     deleteDiv.setAttribute('class', 'delete');
@@ -88,7 +89,25 @@ function addBookToLibrary() {
     
 }
 
+function deleteBookFromLibrary(target) {
+
+}
+
+function changeReadStatus(target) {
+
+}
+
 const bookList = document.querySelector('.book-list ul');
+bookList.addEventListener('click', e => {
+    if (e.target.className === 'delete') {
+        console.log('Delete this');
+        deleteBookFromLibrary(e.target);
+    } else if (e.target.className === 'read-book') {
+        console.log('Change read status'); //! Careful with this one
+        changeReadStatus();
+    }
+})
+
 const addBookForm = document.getElementById('book-form');
 addBookForm.addEventListener('submit', (e) => {
     e.preventDefault();

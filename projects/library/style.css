@@ -74,6 +74,7 @@ button {
 
 .book-author {
   grid-row: 2;
+  font-style: italic;
 }
 
 .book-pages {
