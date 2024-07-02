@@ -4,7 +4,6 @@ function Book(id, title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-    // this.published = published;
 }
 
 function createDiv(divClass, pText) {
@@ -55,28 +54,63 @@ function createBookEntry(book) {
 
     div.setAttribute('class', 'book');
     li.appendChild(div);
+    li.setAttribute('data-id', book.id)
 
     return li
 }
 
+function setIds() {
+    for (i in myLibrary) {
+        myLibrary[i].id = i;
+    }
+}
+
 function displayBooks() {
+    bookList.innerHTML = '';
     for (book in myLibrary) {
         bookList.appendChild(createBookEntry(myLibrary[book]));
     }
 }
 
 function addBookToLibrary() {
-    console.log('New Book!');
-    
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+    const pages = document.getElementById('pages').value;
+    const hasRead = document.getElementById('has-read').checked;
+
+    const book = new Book(
+        myLibrary.length,
+        title,
+        author,
+        pages,
+        hasRead
+    );
+
+    myLibrary.push(book);
+    displayBooks();
+}
+
+function getBookId(target) {
+    const book = target.parentNode.parentNode.parentNode;
+    const bookId = Number(book.getAttribute('data-id'));
+
+    return bookId
 }
 
 function deleteBookFromLibrary(target) {
     const book = target.parentNode.parentNode.parentNode;
-    book.remove()
+    const bookId = Number(book.getAttribute('data-id'));
+
+    book.remove();
+    myLibrary.splice(bookId, 1);
+    setIds();
+
 }
 
 function changeReadStatus(target) {
+    const bookId = getBookId(target);
 
+    myLibrary[bookId].read = !myLibrary[bookId].read;
 }
 
 
@@ -95,16 +129,15 @@ bookList.addEventListener('click', e => {
     } else if (
         (e.target.className === 'read') ||
         (e.target.className === 'not-read')) {
-        console.log('Change read status');
-        changeReadStatus();
+        changeReadStatus(e.target);
     }
+    displayBooks();
 })
 
 const addBookForm = document.getElementById('book-form');
 addBookForm.addEventListener('submit', (e) => {
     e.preventDefault();
     addBookToLibrary();
-    // displayBooks();
 })
 
 displayBooks();
