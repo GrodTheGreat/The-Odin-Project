@@ -4,8 +4,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project: Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./main.js" defer></script>
 </head>
 <body>
-  
+  <h1>Tic-Tac-Toe</h1>
+  <hr>
+  <div class="game">
+    <div class="scoreboard">
+      <h2 id="score-header">Score</h2>
+      <div class="score" id="player-1-score">
+        <p id="player-1-name">Player 1</p>
+        <p>0</p>
+      </div>
+      <p id="score-divider">-</p>
+      <div class="score" id="player-2-score">
+        <p id="player-2-name">Player 2</p>
+        <p>0</p>
+      </div>
+      <div class="victory">
+        <p class="victory-message"></p>
+      </div>
+    </div>
+    <div class="gameboard">
+      <div class="cell" id="cell-0-0">
+        <p class="marker"></p>
+      </div>
+      <div class="cell" id="cell-0-1">
+        <p class="marker"></p>
+      </div>
+      <div class="cell" id="cell-0-2">
+        <p class="marker"></p>
+      </div>
+      <div class="cell" id="cell-1-0">
+        <p class="marker"></p>
+      </div>
+      <div class="cell" id="cell-1-1">
+        <p class="marker"></p>
+      </div>
+      <div class="cell" id="cell-1-2">
+        <p class="marker"></p>
+      </div>
+      <div class="cell" id="cell-2-0">
+        <p class="marker"></p>
+      </div>
+      <div class="cell" id="cell-2-1">
+        <p class="marker"></p>
+      </div>
+      <div class="cell" id="cell-2-2">
+        <p class="marker"></p>
+      </div>
+    </div>
+    <div class="controls">
+      <form action="." method="post">
+        <label for="player-1">Player 1 Name</label>
+        <input type="text" name="player-1" id="player-1" placeholder="Player 1">
+        <label for="player-2">Player 2 Name</label>
+        <input type="text" name="player-2" id="player-2" placeholder="Player 2">
+        <div class="control-buttons">
+          <button type="submit">Submit</button>
+          <button type="submit">Reset</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
