@@ -13,31 +13,26 @@ function GameBoard() {
     return {getGameboard, setGameboard, resetGameboard};
 };
 
-function Player(name, marker) {
+function createPlayer(name, marker) {
     const name = name;
     const marker = marker;
     let score = 0;
 
-    function getName() {
-        return this.name;
-    };
-    function setName(newName) {
-        this.name = newName;
-    };
-    function getMarker() {
-        return this.marker;
-    };
-    function setMarker(newMarker) {
-        this.marker = newMarker;
-    };
-    function getScore() {
-        return this.score;
-    }
-    function winGame() {
-        this.score++;
-    }
+    const getName = () => this.name;
+    const setName = (newName) => this.name = newName;
+    const getMarker = () => this.marker;
+    const setMarker = (newMarker) => this.marker = newMarker;
+    const getScore = () => this.score;
+    const winGame = () => this.score++;
 
-    return {getName, setName, getMarker, setMarker, getScore, winGame};
+    return {
+        getName,
+        setName,
+        getMarker,
+        setMarker,
+        getScore,
+        winGame
+    };
 };
 
 function Game() {
