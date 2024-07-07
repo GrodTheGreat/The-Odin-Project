@@ -1,16 +1,36 @@
 function GameBoard() {
     const gameboard = [
-        ['.', '.', '.'],
-        ['.', '.', '.'],
-        ['.', '.', '.']
+        ['', '', ''],
+        ['', '', ''],
+        ['', '', '']
     ];
 
-    function getGameboard() {};
-    function setGameboard() {};
-    function resetGameboard() {
+    const getGameboard = () => this.gameboard;
+    const setGameboard = (row, column, marker) => {
+        if (
+            (row > 2) ||
+            (row < 0) ||
+            (column > 2) ||
+            (column < 0)
+        ) {
+            return false;
+        }
 
+        if (this.gameboard[row][column] === '') {
+            this.gameboard[row][column] = marker;
+            return true;
+        }
     };
-    return {getGameboard, setGameboard, resetGameboard};
+    const resetGameboard = () => {
+        this.gameboard[0] = ['', '', ''];
+        this.gameboard[1] = ['', '', ''];
+        this.gameboard[2] = ['', '', ''];
+    };
+    return {
+        getGameboard,
+        setGameboard,
+        resetGameboard
+    };
 };
 
 function createPlayer(name, marker) {
