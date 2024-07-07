@@ -1,11 +1,11 @@
-function GameBoard() {
+const GameBoard = (() => {
     const gameboard = [
         ['', '', ''],
         ['', '', ''],
         ['', '', '']
     ];
 
-    const getGameboard = () => this.gameboard;
+    const getGameboard = () => gameboard;
     const setGameboard = (row, column, marker) => {
         if (
             (row > 2) ||
@@ -16,34 +16,34 @@ function GameBoard() {
             return false;
         }
 
-        if (this.gameboard[row][column] === '') {
-            this.gameboard[row][column] = marker;
+        if (gameboard[row][column] === '') {
+            gameboard[row][column] = marker;
             return true;
         }
     };
     const resetGameboard = () => {
-        this.gameboard[0] = ['', '', ''];
-        this.gameboard[1] = ['', '', ''];
-        this.gameboard[2] = ['', '', ''];
+        gameboard[0] = ['', '', ''];
+        gameboard[1] = ['', '', ''];
+        gameboard[2] = ['', '', ''];
     };
     return {
         getGameboard,
         setGameboard,
         resetGameboard
     };
-};
+})();
 
 function createPlayer(name, marker) {
-    const name = name;
-    const marker = marker;
+    let name = name;
+    let marker = marker;
     let score = 0;
 
-    const getName = () => this.name;
-    const setName = (newName) => this.name = newName;
-    const getMarker = () => this.marker;
-    const setMarker = (newMarker) => this.marker = newMarker;
-    const getScore = () => this.score;
-    const winGame = () => this.score++;
+    const getName = () => name;
+    const setName = (newName) => name = newName;
+    const getMarker = () => marker;
+    const setMarker = (newMarker) => marker = newMarker;
+    const getScore = () => score;
+    const winGame = () => score++;
 
     return {
         getName,
@@ -55,6 +55,46 @@ function createPlayer(name, marker) {
     };
 };
 
-function Game() {
+const Game = (() => {
+    let player1Turn = true;
+    let gameOver = false;
 
-};
+    const player1 = createPlayer('Player 1', 'X');
+    const player2 = createPlayer('Player 2', 'O');
+
+    const gameboard = document.querySelector('.gameboard');
+    gameboard.addEventListener('click', (e) => {
+        const target = e.target;
+        console.log(target);
+    });
+
+    const checkWinner = () => {};
+    const checkRow = (row, marker) => {
+        if (typeof(row) !== Number) {
+            return false;
+        }
+        if (row > 2) {
+            return false;
+        }
+        if (row < 0) {
+            return false;
+        }
+
+        if (typeof(marker) !== String) {
+            return false;
+        }
+        if ((marker !== 'X') || (marker !== 'O')) {
+            return false;
+        }
+
+        for (i = 0; i < 2; i++) {
+            if (GameBoard.getGameboard()[row][i] !== marker) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+    };
+    const checkColumn = (column) => {};
+})();
