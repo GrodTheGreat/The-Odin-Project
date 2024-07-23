@@ -1,7 +1,41 @@
 const tic = (() => {
+    const Events = (() => {
+        const events = {};
+
+        const on = function (event, func) {
+            events[event] = events[event] || [];
+            events[event].push(func);
+        };
+        
+        const off = function (event, func) {
+            if (events[event]) {
+                for (let i = 0; i < events[event].length; i++) {
+                    if (events[event][i] == func) {
+                        events[event].splice(i, 1);
+                        break;
+                    }
+                }
+            }
+        };
+
+        const emit = function (event, data) {
+            if (events[event]) {
+                events[event].forEach((func) => {
+                    func(data);
+                });
+            }
+        };
+
+        return {
+            on,
+            off,
+            emit
+        }
+    })();
+
     const GameBoard = (() => {
         const gameboard = [
-            ['', '', ''],
+            ['X', 'X', 'X'],
             ['', '', ''],
             ['', '', '']
         ];
@@ -73,9 +107,18 @@ const tic = (() => {
 
         const gameboard = document.querySelector('.gameboard');
         gameboard.addEventListener('click', (e) => {
-            const target = e.target;
-            console.log(target);
+            // const target = e.target;
+            // placeMarker(target, player1)
+
         });
+
+        // const placeMarker = (target, player) => {
+        //     if ((target.children[0].classList.value === 'marker') &&
+        //         (target.children[0].textContent === '')) {
+        //             const cell = target.id.split('-');
+        //             // Gameboard.setGameboard(cell[1], cell[2], player.getMarker());
+        //     }
+        // };
 
         const checkWinner = () => {
             
@@ -108,6 +151,7 @@ const tic = (() => {
                 }
             }
         };
+
         const checkColumn = (column, marker) => {
             if (typeof(column) !== Number) {
                 return false;
@@ -173,60 +217,60 @@ const tic = (() => {
         };
     })();
 
-    const events = (() => {
-        const events = {};
-
-        const on = function (event, func) {
-            events[event] = events[event] || [];
-            events[event].push(func);
-        };
-        const off = function (event, func) {
-            if (events[event]) {
-                for (let i = 0; i < events[event].length; i++) {
-                    if (events[event][i] == func) {
-                        events[event].splice(i, 1);
-                        break;
-                    }
-                }
-            }
-        };
-        const emit = function (event, data) {
-            if (events[event]) {
-                events[event].forEach((func) => {
-                    func(data);
-                });
-            }
-        };
-
-        return {
-            on,
-            off,
-            emit
-        }
-    })();
-
-
     const DisplayController = (() => {
         const game = document.querySelector('.game');
-        
-        const player1Name = game.querySelector('#player-1-score').firstChild.textContent;
-        const player1Score = game.querySelector('#player-1-score').lastChild.textContent;
-        
-        const player2Name = game.querySelector('#player-2-score').firstChild.textContent;
-        const player2Score = game.querySelector('#player-2-score').lastChild.textContent;
 
+        const gameboard = game.querySelector('.gameboard');
 
-        const form = document.querySelector('form');
+        const score = game.querySelector('.scoreboard');
+
+        const form = game.querySelector('form');
         const player1 = form.querySelector('#player-1');
         const player2 = form.querySelector('#player-2');
+        const reset = form.querySelector('#reset');
 
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            console.log('Submitted');
+
+            const players = {
+                'player1': player1.value || 'Player 1',
+                'player2': player2.value || 'Player 2'
+            }
+
+            score.querySelector('#player-1-score').children[0].textContent = players.player1;
+            score.querySelector('#player-2-score').children[0].textContent = players.player2;
+
+            Events.emit('nameChange', players);
+        });
+        reset.addEventListener('click', (e) => {
+            resetGame();
         });
 
+        const resetGame = () => {
+            const markers = gameboard.querySelectorAll('.marker');
+            markers.forEach((marker) => {
+                marker.textContent = '';
+            });
 
-        return {game, form, player1, player2, player1Name, player1Score};
+            Events.emit('reset', '');
+        };
+
+        const renderCell = (row, column, marker) => {
+            const cell = gameboard.querySelector(`#cell-${row}-${column}`)
+            if (cell.children[0].textContent === '') {
+                cell.children[0].textContent = marker;
+            }
+        };
+
+        const renderScore = (player, id) => {
+            score.querySelector(`#player-${id}-score`).children[1].textContent = player.getScore();
+        };
+
+        Events.on('boardChange', renderCell);
+        Events.on('gameOver', renderScore);
+        Events.on('gameOver', resetGame);
+
+        return {renderCell};
     })()
 
     return {
