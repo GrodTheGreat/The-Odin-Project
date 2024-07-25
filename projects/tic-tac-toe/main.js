@@ -270,7 +270,7 @@ const tic = (() => {
         Events.on('gameOver', renderScore);
         Events.on('gameOver', resetGame);
 
-        return {renderCell};
+        return {resetGame};
     })()
 
     return {
