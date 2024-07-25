@@ -1,9 +1,62 @@
-function Book(id, title, author, pages, read) {
-    this.id = id;
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+// function Book(id, title, author, pages, read) {
+//     this.id = id;
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.read = read;
+// }
+
+class Book {
+    #id;
+    #title;
+    #author;
+    #pages;
+    #read;
+
+    constructor(id, title, author, pages, read) {
+        this.#id = id;
+        this.#title = title;
+        this.#author = author;
+        this.#pages = pages;
+        this.#read = read;
+    }
+
+    get id() {
+        return this.#id;
+    }
+    get title() {
+        return this.#title;
+    }
+    get author() {
+        return this.#author;
+    }
+    get pages() {
+        return this.#pages;
+    }
+    get read() {
+        return this.#read;
+    }
+
+    set id(value) {
+        if (typeof value != 'number') return;
+        if (value < 0) return;
+        this.#id = value;
+    }
+    set title(value) {
+        this.#title = value;
+    }
+    set author(value) {
+        this.#author = value;
+    }
+    set pages(value) {
+        if (typeof value != 'number') return;
+        if (value < 0) return;
+        this.#pages = value;
+    }
+    set read(value) {
+        if (typeof value != 'boolean') return;
+        this.#read = value;
+    }
 }
 
 function createDiv(divClass, pText) {
@@ -49,7 +102,7 @@ function createBookEntry(book) {
     div.appendChild(titleDiv);
     div.appendChild(authorDiv);
     div.appendChild(pagesDiv);
-    div.appendChild(readDiv);    
+    div.appendChild(readDiv);
     div.appendChild(deleteDiv);
 
     div.setAttribute('class', 'book');
