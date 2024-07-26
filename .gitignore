@@ -1,4 +1,4 @@
 .DS_Store
 .vscode/
 
-es6-modules/node_modules/
+es6-modules/webpack-demo/node_modules
