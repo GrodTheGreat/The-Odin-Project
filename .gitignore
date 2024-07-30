@@ -3,3 +3,5 @@
 
 es6-modules/webpack-demo/node_modules
 webpack/node_modules
+projects/restaurant/node_modules
+projects/restaurant/dist
