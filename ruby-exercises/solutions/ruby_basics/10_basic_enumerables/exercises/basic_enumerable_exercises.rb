@@ -31,8 +31,8 @@ def find_word_lengths(word_list)
   # use #reduce to iterate through each item of the word_list (an array)
   # return a hash with each word as the key and its length as the value
   # hint: look at the documentation and review the reduce examples in basic enumerable lesson
-  word_list.reduce(Hash.new) do |length_hash, word|
-    length_hash[word] = word.length   # This adds the word as the key & its length as the value
-    length_hash                       # This is the required return value for each iteration
+  word_list.each_with_object({}) do |word, length_hash|
+    length_hash[word] = word.length # This adds the word as the key & its length as the value
+    # This is the required return value for each iteration
   end
 end

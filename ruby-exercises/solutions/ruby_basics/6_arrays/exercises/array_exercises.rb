@@ -20,7 +20,7 @@ end
 
 def add_element(array)
   # add an element (of any value) to the array
-  array << "ruby"
+  array << 'ruby'
 end
 
 def remove_last_element(array)

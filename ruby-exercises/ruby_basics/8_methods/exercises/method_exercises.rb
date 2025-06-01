@@ -39,9 +39,7 @@ end
 # explicit return value: 'Input Error' if character's length does not equal 1
 # hint: use String#ord
 def ascii_code(character)
-  if character.length != 1
-    return "Input Error"
-  end
+  return 'Input Error' if character.length != 1
 
   character.ord
 end
@@ -54,14 +52,14 @@ end
 # console output: otherwise, "I think <animal>s have pet-tential!" (potential)
 # hint: use puts
 def pet_pun(animal)
-  case animal
-  when "cat"
-    pun = "Cats are purr-fect!"
-  when "dog"
-    pun = "Dogs are paw-some!"
-  else
-    pun = "I think #{animal}s have pet-tential!"
-  end
+  pun = case animal
+        when 'cat'
+          'Cats are purr-fect!'
+        when 'dog'
+          'Dogs are paw-some!'
+        else
+          "I think #{animal}s have pet-tential!"
+        end
   puts pun
 end
 

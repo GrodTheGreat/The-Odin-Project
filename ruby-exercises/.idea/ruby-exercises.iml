@@ -35,7 +35,11 @@
     <orderEntry type="library" scope="PROVIDED" name="rspec-support (v3.13.4, rbenv: 3.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubocop (v1.75.8, rbenv: 3.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubocop-ast (v1.44.1, rbenv: 3.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop-performance (v1.25.0, rbenv: 3.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.13.0, rbenv: 3.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="standard (v1.50.0, rbenv: 3.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="standard-custom (v1.0.2, rbenv: 3.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="standard-performance (v1.8.0, rbenv: 3.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="unicode-display_width (v3.1.4, rbenv: 3.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="unicode-emoji (v4.0.4, rbenv: 3.4.3) [gem]" level="application" />
   </component>

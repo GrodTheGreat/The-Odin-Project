@@ -3,8 +3,8 @@ def create_favorite_hash(color, number)
   # key of color (as a symbol) with value of the color argument
   # key of number (as a symbol) with the value of the number argument
   {
-    :color => color,
-    :number => number
+    color: color,
+    number: number
   }
 end
 
