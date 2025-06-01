@@ -1,4 +1,3 @@
-.DS_Store
 .vscode/
 
 es6-modules/webpack-demo/node_modules
@@ -34,6 +33,8 @@ projects/restaurant/dist
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
+
+**/.idea/**
 
 # Gradle
 .idea/**/gradle.xml
